@@ -1,8 +1,8 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:3000')
+const messageContainer = document.getElementById('messages')
+const messageForm = document.getElementById('form')
+const messageInput = document.getElementById('input')
 
-const messages = document.getElementById('messages');
- const form = document.getElementById('form');
-      const input = document.getElementById('input');
-
-const name = prompt("enter your name to join")
-socket.emit('new user joined',name)
+const name = prompt('What is your name?')
+appendMessage('You joined')
+socket.emit('new-user', name)
